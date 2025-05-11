@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadjo Allouan Moise Bienvenue - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Bouton retour en haut -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo" data-text="Portfolio">Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Accueil</a></li>
+                    <li><a href="#about" class="nav-link">À propos</a></li>
+                    <li><a href="#skills" class="nav-link">Compétences</a></li>
+                    <li><a href="#projects" class="nav-link">Projets</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="typing-effect">Bonjour, je suis<span class="highlight">Kadjo Allouan Moise Bienvenue</span></h1>
+                <h2 class="typing-effect-2">Étudiant en LICENCE 3 de Science Informatique</h2>
+                <h2 class="typing-effect-3">Département de MATH-INFO - UFHB</h2>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact-foot" class="btn btn-secondary">Me contacter</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/KAMB02" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="www.linkedin.com/in/allouan-moise-kadjo-b15ab6333" class="social-icon" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a> 
+                    <a href="https://wa.me/+2250143428561" class="social-icon" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>   
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="image/me.png" alt="Photo de profil" class="profile-img">
+                    <div class="circle-animation"></div>
+                    <div class="circle-animation delay-1"></div>
+                    <div class="circle-animation delay-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="section-subtitle">Qui je suis</div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Je suis un étudiant passionné par les mathematique mais surtout l'Informatique. Actuellement en Licence 3 de Science Informatique à l'Université Félix Houphouët-Boigny, je me spécialise dans le développement web et la programmation.</p>
+                    <p>Mon objectif est de devenir un expert dans le domaine de la Cybersecurite, capable de créer des solutions innovantes et performantes. J'aime apprendre de nouvelles technologies et relever des défis techniques.</p>
+                    <div class="about-cta">
+                        <a href="#" class="btn btn-primary">Télécharger mon CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Mes compétences</h2>
+            <div class="section-subtitle">Ce que je maîtrise</div>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML/CSS</h3>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="95%">
+                            <span>95%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="35%">
+                            <span>35%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="80%">
+                            <span>80%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>MySQL</h3>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="60%">
+                            <span>60%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Cybersecurite</h3>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="15%">
+                            <span>25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Mes certifications</h2>
+            <div class="section-subtitle">Ce que j'ai appris et validé</div>
+            <div class="certifications-filter">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="tech">Technologie</button>
+                <button class="filter-btn" data-filter="Languages">Languages</button>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card" data-category="tech">
+                    <div class="certification-image">
+                        <img src="certificat/cybersecurite.png" alt="Certification 1">
+                        <div class="certification-overlay">
+                            <div class="overlay-content">
+                                <h3>Cybersecurity</h3>
+                                <p>Introduction to  Cybersecurity</p>
+                                <div class="certification-links">
+                                    <a href="https://www.credly.com/badges/7e425caf-c712-4d05-9e33-624f8a11dab2/public_url" class="certification-link"><i class="fas fa-link"></i> Voir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certification-info">
+                        <h3>Cybersecurity</h3>
+                        <div class="certification-date">Obtenue le 20 octobre 2024</div>
+                    </div>
+                </div>
+                
+                <div class="certification-card" data-category="Languages">
+                    <div class="certification-image">
+                        <img src="certificat/pythone1.png" alt="Certification 2">
+                        <div class="certification-overlay">
+                            <div class="overlay-content">
+                                <h3>Python</h3>
+                                <p>Python Essentials 1</p>
+                                <div class="certification-links">
+                                    <a href="https://www.credly.com/badges/4da30c4d-f101-4ae0-b50e-f9a7af4229ec/public_url" class="certification-link"><i class="fas fa-link"></i> Voir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certification-info">
+                        <h3>Python</h3>
+                        <div class="certification-date">Obtenue le 2 Avril 2025</div>
+                    </div>
+                </div>
+            </div>  
+            <div class="certifications-cta">
+                <a href="https://www.credly.com/users/allouan-moise-bienvenue-kadjo" class="btn btn-primary">Voir plus de certifications</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Mes projets</h2>
+            <div class="section-subtitle">Ce que j'ai réalisé</div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">Applications</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="image/archivre.png" alt="Projet 4">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Site archivre</h3>
+                                <p>Plateforme d'archivre.</p>
+                                <div class="project-links">
+                                    <a href="https://kamb02.github.io/projet_html/" class="project-link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Site archivre</h3>
+                        <div class="certification-date">Realiser en Mai 2025</div>
+                    </div> 
+
+                </div>
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Projet 2">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Application de pointage </h3>
+                                <p>Application de pointage des etudiants.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Application de pointage</h3>
+                        <span>Python, API</span>
+                        <div class="certification-date">Realiser en Avril 2025</div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="image/aff1.png" alt="Projet 4">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Affiche pub</h3>
+                                <p>Affiche publicitaire de vente.</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Affiche pub</h3>
+                        <div class="certification-date">Realiser en Septembre 2024</div>
+                    </div>                        
+                </div>
+            </div>
+            <div class="projects-cta">
+                <a href="#" class="btn btn-primary">Voir plus de projets</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <div class="section-subtitle">Parlons de votre projet</div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Votre nom" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Votre email" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Sujet" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Votre message" required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Kadjo Allouan Moise Bienvenue</h3>
+                    <p>Étudiant en Licence 3 de Science Informatique passionné par le développement web et les nouvelles technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#projects">Projets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact" id="contact-foot">
+                     <h3>Contact</h3>
+                      <p>
+                        <a href="mailto:kallouan25@gmail.com">
+                          <i class="fas fa-envelope"></i> Email
+                        </a>
+                      </p>
+
+                      <p>
+                        <a href="tel:+2250143420561" style="text-decoration: none; color: inherit;">
+                          <i class="fas fa-phone" style="margin-right: 8px;"></i> Telephone
+                        </a>
+                      </p> 
+                      <p>
+                        <a href="https://www.facebook.com/allouanbienvenue.kadjo" >                
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a> 
+                      </p>
+                        <p>
+                            <a href="www.linkedin.com/in/allouan-moise-kadjo-b15ab6333">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </p>      
+                      <p>
+                        <a href="https://wa.me/+2250143428561">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>                        
+                      </p>     
+                      <p>
+                        <a href="https://github.com/KAMB02">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>        
+                      </p>                          
+                    <!-- <p><i class="fas fa-phone"></i> +225 0502081881</p> -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KAMB02. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
