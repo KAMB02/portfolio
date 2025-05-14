@@ -1,9 +1,20 @@
+function sendMail() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+
+    emailjs.send('service_wz2e2ch', 'template_qut237h', templateParams).then(alert("Email envoyer avec succes"))
+    
+}
+
 // Fichier JavaScript pour le portfolio
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Chargement de la page
-    setTimeout(function() {
+    setTimeout(function () {
         document.querySelector('.loader-wrapper').style.opacity = '0';
-        setTimeout(function() {
+        setTimeout(function () {
             document.querySelector('.loader-wrapper').style.display = 'none';
         }, 500);
     }, 1000);
@@ -24,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function typeWriter(text, element, speed, callback) {
         let i = 0;
         element.textContent = '';
-        
+
         function typing() {
             if (i < text.length) {
                 element.textContent += text.charAt(i);
@@ -34,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 callback();
             }
         }
-        
+
         typing();
     }
 
     // Lancement séquentiel des effets de typing
-    typeWriter(typingTexts[0], typingElements[0], 50, function() {
-        typeWriter(typingTexts[1], typingElements[1], 50, function() {
+    typeWriter(typingTexts[0], typingElements[0], 50, function () {
+        typeWriter(typingTexts[1], typingElements[1], 50, function () {
             typeWriter(typingTexts[2], typingElements[2], 50);
         });
     });
@@ -50,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const navLinkItems = document.querySelectorAll('.nav-links li');
 
-    burger.addEventListener('click', function() {
+    burger.addEventListener('click', function () {
         // Toggle nav
         navLinks.classList.toggle('nav-active');
-        
+
         // Animation burger
         burger.classList.toggle('toggle');
-        
+
         // Animation des liens
         navLinkItems.forEach((link, index) => {
             if (link.style.animation) {
@@ -69,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fermer le menu mobile après clic sur un lien
     navLinkItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             if (navLinks.classList.contains('nav-active')) {
                 navLinks.classList.remove('nav-active');
                 burger.classList.remove('toggle');
@@ -81,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Changement de style du header au scroll
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const header = document.querySelector('header');
         if (window.scrollY > 100) {
             header.classList.add('scrolled');
@@ -92,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Animation des barres de compétences
     const skillItems = document.querySelectorAll('.skill-item');
-    
+
     function animateSkills() {
         skillItems.forEach(item => {
             const progress = item.querySelector('.progress');
@@ -102,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Observer pour déclencher l'animation des compétences
-    const skillsObserver = new IntersectionObserver(function(entries) {
+    const skillsObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateSkills();
@@ -121,14 +132,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
 
     filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             // Retirer la classe active de tous les boutons
             filterBtns.forEach(btn => btn.classList.remove('active'));
             // Ajouter la classe active au bouton cliqué
             this.classList.add('active');
-            
+
             const filter = this.getAttribute('data-filter');
-            
+
             projectCards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
                     card.style.display = 'block';
@@ -140,84 +151,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Validation du formulaire de contact
+    // Intégration EmailJS pour le formulaire de contact
+    emailjs.init("VOTRE_PUBLIC_KEY"); // Remplacez par votre clé publique EmailJS
+
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            let isValid = true;
-            
-            // Valider chaque champ
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const subject = document.getElementById('subject');
-            const message = document.getElementById('message');
-            
-            // Réinitialiser les messages d'erreur
-            document.querySelectorAll('.error-message').forEach(el => {
-                el.style.display = 'none';
-            });
-            
-            // Validation du nom
-            if (name.value.trim() === '') {
-                showError(name, 'Le nom est requis');
-                isValid = false;
-            }
-            
-            // Validation de l'email
-            if (email.value.trim() === '') {
-                showError(email, 'L\'email est requis');
-                isValid = false;
-            } else if (!isValidEmail(email.value.trim())) {
-                showError(email, 'Veuillez entrer un email valide');
-                isValid = false;
-            }
-            
-            // Validation du sujet
-            if (subject.value.trim() === '') {
-                showError(subject, 'Le sujet est requis');
-                isValid = false;
-            }
-            
-            // Validation du message
-            if (message.value.trim() === '') {
-                showError(message, 'Le message est requis');
-                isValid = false;
-            }
-            
-            // Si tout est valide, on peut envoyer le formulaire
-            if (isValid) {
-                // Ici, vous pourriez ajouter du code pour envoyer le formulaire via AJAX
-                alert('Message envoyé avec succès!');
-                contactForm.reset();
+
+            // Récupérer les valeurs des champs
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Valider les champs
+            if (!name || !email || !subject || !message) {
+                alert('Veuillez remplir tous les champs.');
+                return;
             }
         });
-    }
-    
-    function showError(input, message) {
-        const errorElement = input.nextElementSibling;
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-        input.style.borderColor = 'var(--danger-color)';
-    }
-    
-    function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
     }
 
     // Bouton retour en haut
     const backToTopBtn = document.getElementById('back-to-top');
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
             backToTopBtn.classList.add('active');
         } else {
             backToTopBtn.classList.remove('active');
         }
     });
-    
-    backToTopBtn.addEventListener('click', function() {
+
+    backToTopBtn.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -226,34 +193,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Animation au scroll des sections
     const sections = document.querySelectorAll('section');
-    
-    const sectionObserver = new IntersectionObserver(function(entries) {
+
+    const sectionObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
             }
         });
     }, { threshold: 0.1 });
-    
+
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
 
     // Navigation active
     const navLinksAll = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         let current = '';
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            
+
             if (pageYOffset >= (sectionTop - 300)) {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinksAll.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
@@ -264,12 +231,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scrolling pour les liens d'ancrage
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
@@ -326,3 +293,5 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+

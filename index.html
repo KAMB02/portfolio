@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="50x50" href="image/logo.png">
+    
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "YdqMymkbgRhknv-97",
+        });
+    })();
+    </script>
 </head>
 <body>
     <!-- Loader -->
@@ -28,7 +40,7 @@
                     <li><a href="#about" class="nav-link">À propos</a></li>
                     <li><a href="#skills" class="nav-link">Compétences</a></li>
                     <li><a href="#projects" class="nav-link">Projets</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#contact-foot" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="burger">
                     <div class="line1"></div>
@@ -272,33 +284,6 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contactez-moi</h2>
-            <div class="section-subtitle">Parlons de votre projet</div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Votre nom" required>
-                        <span class="error-message"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder="Votre email" required>
-                        <span class="error-message"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" placeholder="Sujet" required>
-                        <span class="error-message"></span>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" placeholder="Votre message" required></textarea>
-                        <span class="error-message"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -313,7 +298,7 @@
                         <li><a href="#about">À propos</a></li>
                         <li><a href="#skills">Compétences</a></li>
                         <li><a href="#projects">Projets</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact-foot">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact" id="contact-foot">
