@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Effet de typing pour le hero
     const typingTexts = [
         "Bonjour, je suis Kadjo Allouan Moise Bienvenue",
-        "Étudiant en LICENCE 3 de Science Informatique",
-        "Département de MATH-INFO - UFHB"
+        "Étudiant en Master de Réseaux, Système et Télécommunications",
+        "À l'Université Félix Houphouet Boigny  Département de MATH-INFO"
     ];
 
     const typingElements = [
