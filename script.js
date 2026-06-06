@@ -4,6 +4,35 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // ── Theme Toggle (Clair / Sombre) ────────────────────────
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon   = themeToggle ? themeToggle.querySelector('i') : null;
+
+    function applyTheme(mode) {
+        if (mode === 'light') {
+            document.body.classList.add('light-mode');
+            if (themeIcon) { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
+            if (themeToggle) themeToggle.setAttribute('aria-label', 'Passer en mode sombre');
+        } else {
+            document.body.classList.remove('light-mode');
+            if (themeIcon) { themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); }
+            if (themeToggle) themeToggle.setAttribute('aria-label', 'Passer en mode clair');
+        }
+    }
+
+    // Load saved preference
+    const savedTheme = localStorage.getItem('kamb-theme') || 'dark';
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+            const isLight = document.body.classList.contains('light-mode');
+            const newTheme = isLight ? 'dark' : 'light';
+            applyTheme(newTheme);
+            localStorage.setItem('kamb-theme', newTheme);
+        });
+    }
+
     // ── Loader ──────────────────────────────────────────────
     const loaderWrapper = document.querySelector('.loader-wrapper');
     if (loaderWrapper) {
@@ -15,17 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1200);
     }
 
-    // Effet de typing pour le hero
-    const typingTexts = [
-        "Bonjour, je suis Kadjo Allouan Moise Bienvenue",
-        "Étudiant en LICENCE 3 de Science Informatique",
-        "Département de MATH-INFO - UFHB"
-    ];
-
-    const typingElements = [
-        document.querySelector('.typing-effect'),
-        document.querySelector('.typing-effect-2'),
-        document.querySelector('.typing-effect-3')
+    // ── Typing Effect ────────────────────────────────────────
+    const typingData = [
+        { el: document.querySelector('.typing-effect'),   text: 'Bonjour, je suis Kadjo Allouan Moise Bienvenue', speed: 45 },
+        { el: document.querySelector('.typing-effect-2'), text: 'Étudiant en Master 1 RIST — UFHB',               speed: 55 },
+        { el: document.querySelector('.typing-effect-3'), text: 'Réseaux · Systèmes · Cybersécurité',             speed: 60 },
     ];
 
     function typeWriter(data, index, callback) {
@@ -289,41 +312,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-
-    // ── Theme Toggle ─────────────────────────────────────────
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const html = document.documentElement;
-
-    // Load saved theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        html.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
-    }
-
-    if (themeToggle && themeIcon) {
-        themeToggle.addEventListener('click', function () {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
-    }
-
-    function updateThemeIcon(theme) {
-        if (themeIcon) {
-            if (theme === 'light') {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            } else {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            }
-        }
-    }
 });
 
 // ── Injected CSS Animations ──────────────────────────────────
