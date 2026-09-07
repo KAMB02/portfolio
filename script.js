@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const themeIcon   = themeToggle ? themeToggle.querySelector('i') : null;
 
     function applyTheme(mode) {
+        document.documentElement.setAttribute('data-theme', mode);
         if (mode === 'light') {
-            document.body.classList.add('light-mode');
             if (themeIcon) { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
             if (themeToggle) themeToggle.setAttribute('aria-label', 'Passer en mode sombre');
         } else {
-            document.body.classList.remove('light-mode');
             if (themeIcon) { themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); }
             if (themeToggle) themeToggle.setAttribute('aria-label', 'Passer en mode clair');
         }
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (themeToggle) {
         themeToggle.addEventListener('click', function () {
-            const isLight = document.body.classList.contains('light-mode');
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
             const newTheme = isLight ? 'dark' : 'light';
             applyTheme(newTheme);
             localStorage.setItem('kamb-theme', newTheme);
