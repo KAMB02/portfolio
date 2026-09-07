@@ -636,6 +636,12 @@ nav {
     font-size: 1rem;
     line-height: 1.8;
 }
+.vulnscan-link {
+    color: #1683ff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.vulnscan-link:hover { color: var(--primary); }
 .about-text p strong { color: var(--white); }
 .about-tags {
     display: flex;
@@ -759,6 +765,16 @@ nav {
     letter-spacing: -0.01em;
 }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tags .skill-tag:nth-child(n+5) { display: none; }
+.skill-tags::after {
+    content: '+ et plus encore';
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-style: italic;
+}
 .skill-tag {
     display: inline-flex;
     align-items: center;

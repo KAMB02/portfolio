@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ── Typing Effect ────────────────────────────────────────
     const typingData = [
         { el: document.querySelector('.typing-effect'),   text: 'Bonjour, je suis Kadjo Allouan Moise Bienvenue', speed: 45 },
-        { el: document.querySelector('.typing-effect-2'), text: 'Étudiant en Master 1 RIST — UFHB',               speed: 55 },
+        { el: document.querySelector('.typing-effect-2'), text: 'Étudiant en Master 2 RIST — UFHB',               speed: 55 },
         { el: document.querySelector('.typing-effect-3'), text: 'Réseaux · Systèmes · Cybersécurité',             speed: 60 },
     ];
 
@@ -219,8 +219,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const filter = this.getAttribute('data-filter');
 
             certCards.forEach(function (card) {
-                const cat = card.getAttribute('data-category') || '';
-                const show = filter === 'all' || cat === filter;
+                const categories = card.getAttribute('data-category') || '';
+                const show = filter === 'all' || categories.split(' ').includes(filter);
                 if (show) {
                     card.style.display = '';
                     card.style.animation = 'fadeInUp 0.4s ease forwards';
